@@ -10,3 +10,12 @@ First of all, there's the amazing work of John Ralls (@jralls) in making GTK/GTK
 This leads to the other method I've used, MacPorts. This works very well, also, and allows you to easily build with mysql support, but the downside is the amount of setup required to get it working on a single host. Installing MacPorts, Xcode and all the dependencies can be time-consuming and utilizes a fair amount of disk space.
 
 I got the idea to run GnuCash on my NAS when I realized that it would make it possible to use a single installed copy from anywhere, and when docker became available on the Synology DSM I started to realize how that might be possible.
+
+Example:
+```bash
+git clone https://github.com/mhitchens/docker-gnucash.git
+cd docker-gnucash
+docker build . -t docker-gnucash
+docker run docker-gnucash
+ssh -X gnucash@localhost
+```
